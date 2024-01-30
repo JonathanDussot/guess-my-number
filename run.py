@@ -6,28 +6,36 @@ import random
 
 def game_level():
     """
-    Game start function to request user's name and difficulty they wish to play
+    Game start function to request user's name and difficulty they wish to play.
+    name input has a while loop with strip() method to ensure anything other than whitespace 
+    is valid.
+    level selection has a while loop to ensure a level is chosen otherwise error will be given and 
+    user would again be prompted to enter a level.
     """
-    name = input('Enter your name here: ')
-    print(f'Hello {name}, which level would you like to play?\n') 
-    level = input("Type either \'easy\',\'medium\', or \'hard\': ")
+    while True:
+        try:
+            name = input('Enter your name here: ')
+            if not name.strip():
+                raise ValueError('Not a valid name')
+            break
+        except ValueError as e:
+            print(e)
+        
+    print(f'Hello {name}, which level would you like to play?\n')
 
-    if level == 'easy':
-        print('You have chosen easy')
+    while True:
+        level = input("Type either 'easy', 'medium', or 'hard': ")
         
-    elif level == 'medium':
-        print('You have chosen medium')
-        
-    elif level == 'hard':
-        print('You have chosen hard')
-        
-    else:
-        print('You have entered an incorrect option')
+        if level in ['easy', 'medium', 'hard']:
+            print(f'Hello {name}, you have chosen {level}')
+            break
+        else:
+            print(f'Sorry {name}, you have entered an invalid option. Please choose a valid game difficulty')
 
     return level
 
 
-def Generate_random_value(chosen_level):
+def generate_random_value(chosen_level):
     """
     Generates value based on game level chosen.
     """
@@ -41,10 +49,11 @@ def Generate_random_value(chosen_level):
         random_number = random.randint(1,100)
         print(random_number)
     else:
-        print('other')
+        print('Invalid game level')
+       
 
 chosen_level = game_level()
-Generate_random_value(chosen_level)
+generate_random_value(chosen_level)
 
 guess = 0
 
