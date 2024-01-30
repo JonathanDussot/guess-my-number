@@ -42,26 +42,74 @@ def generate_random_value(name, chosen_level):
     if chosen_level == 'easy':
         random_number = random.randint(1,20)
         attempts = 6
-        print(f"I\'m thinking of a number, {name}! You have 6 attempts to guess which number it is")
-        
+        print(f"I\'m thinking of a number, {name}! You have 6 attempts to guess which number it is.\n")
     elif chosen_level == 'medium':
-        attempts = 10
-        print(f"I\'m thinking of a number, {name}! You have 10 attempts to guess which number it is")
         random_number = random.randint(1,50)
-       
+        attempts = 10
+        print(f"I\'m thinking of a number, {name}! You have 10 attempts to guess which number it is.\n")
     elif chosen_level == 'hard':
-        attempts = 15
-        print(f"I\'m thinking of a number, {name}! You have 15 attempts to guess which number it is.")
         random_number = random.randint(1,100)
-        
+        attempts = 15
+        print(f"I\'m thinking of a number, {name}! You have 15 attempts to guess which number it is.\n")
     else:
         print('Invalid game level')
 
-    return random_number
+    return random_number, attempts
        
 
+def check_answer(name, random_number_and_attempts, chosen_level):
+    """
+    Checks if user's guess is correct, prevents repeating the same guess, and ensures 
+    the guess is within the valid range.
+    """
+    random_number, attempts = random_number_and_attempts
+    guessed_numbers = []
+
+    while attempts > 0:
+        guess = input(f'Your guess (between 1 and {get_max_value(chosen_level)}): ')
+
+        if guess.isdigit():
+            guess = int(guess)
+        else:
+            print('Invalid input. Please enter a number.')
+            continue
+
+        if guess in guessed_numbers:
+            print('You already guessed that number. Try a different one.')
+            continue
+
+        if 1 <= guess <= get_max_value(chosen_level):
+            guessed_numbers.append(guess)
+
+            if guess != random_number:
+                print('Try again')
+                attempts -= 1
+                if attempts == 0:
+                    print('Game over')
+                    break
+            else:
+                print(f'Hooray, {name}! You guessed the correct number in {attempts} attempts!')
+                break
+        else:
+            print(f'Invalid guess. Please enter a number between 1 and {get_max_value(chosen_level)}.')
+
+
+def get_max_value(chosen_level):
+    """
+    Returns the maximum valid value for the chosen difficulty level.
+    """
+    if chosen_level == 'easy':
+        return 20
+    elif chosen_level == 'medium':
+        return 50
+    elif chosen_level == 'hard':
+        return 100
+    else:
+        return 1  # Default to 1 if the difficulty level is invalid
+
 chosen_name, chosen_level = game_level()
-generate_random_value(chosen_name, chosen_level)
+random_number_and_attempts = generate_random_value(chosen_name, chosen_level)
+check_answer(chosen_name, random_number_and_attempts)
 
 guess = 0
 
