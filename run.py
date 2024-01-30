@@ -32,28 +32,36 @@ def game_level():
         else:
             print(f'Sorry {name}, you have entered an invalid option. Please choose a valid game difficulty')
 
-    return level
+    return name, level
 
 
-def generate_random_value(chosen_level):
+def generate_random_value(name, chosen_level):
     """
     Generates value based on game level chosen.
     """
     if chosen_level == 'easy':
         random_number = random.randint(1,20)
-        print(random_number)
+        attempts = 6
+        print(f"I\'m thinking of a number, {name}! You have 6 attempts to guess which number it is")
+        
     elif chosen_level == 'medium':
+        attempts = 10
+        print(f"I\'m thinking of a number, {name}! You have 10 attempts to guess which number it is")
         random_number = random.randint(1,50)
-        print(random_number)
+       
     elif chosen_level == 'hard':
+        attempts = 15
+        print(f"I\'m thinking of a number, {name}! You have 15 attempts to guess which number it is.")
         random_number = random.randint(1,100)
-        print(random_number)
+        
     else:
         print('Invalid game level')
+
+    return random_number
        
 
-chosen_level = game_level()
-generate_random_value(chosen_level)
+chosen_name, chosen_level = game_level()
+generate_random_value(chosen_name, chosen_level)
 
 guess = 0
 
