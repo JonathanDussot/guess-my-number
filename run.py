@@ -82,13 +82,23 @@ def check_answer(name, random_number_and_attempts, chosen_level):
             guessed_numbers.append(guess)
 
             if guess != random_number:
-                print('Try again')
+                print('Try again\n')
                 attempts -= 1
-                if attempts == 0:
-                    print('Game over')
+                if attempts == 2:
+                    print('You have 2 attempts left, so here are some clues to help!')
+                    if random_number %3 == 0 and random_number %4 == 0:
+                        print('This number is divisible by 3 and 4\n')
+                    elif random_number %3 == 0 and random_number %4 != 0:
+                        print('This number is divisible by 3 but not divisible by 4\n')
+                    elif random_number %3 != 0 and random_number %4 == 0:
+                        print('This number is divisible by 4 but not divisible by 3\n')
+                    elif random_number %3 != 0 and random_number %4 != 0:
+                        print('This number is not divisible by neither 3 or 4\n')
+                elif attempts == 0:
+                    print(f'Sorry {name}, you have run out of attempts. Game over')
                     break
             else:
-                print(f'Hooray, {name}! You guessed the correct number in {attempts} attempts!')
+                print(f'Hooray, {name}! You guessed the correct number!')
                 break
         else:
             print(f'Invalid guess. Please enter a number between 1 and {get_max_value(chosen_level)}.')
@@ -109,7 +119,7 @@ def get_max_value(chosen_level):
 
 chosen_name, chosen_level = game_level()
 random_number_and_attempts = generate_random_value(chosen_name, chosen_level)
-check_answer(chosen_name, random_number_and_attempts)
+check_answer(chosen_name, random_number_and_attempts, chosen_level)
 
 guess = 0
 
