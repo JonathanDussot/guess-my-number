@@ -82,10 +82,11 @@ def check_answer(name, random_number_and_attempts, chosen_level):
             guessed_numbers.append(guess)
 
             if guess != random_number:
+                approximity()
                 print('Try again\n')
                 attempts -= 1
-                if attempts == 2:
-                    print('You have 2 attempts left, so here are some clues to help!')
+                if attempts == 3:
+                    print('You have 3 attempts left, so here are some clues to help!')
                     if random_number %3 == 0 and random_number %4 == 0:
                         print('This number is divisible by 3 and 4\n')
                     elif random_number %3 == 0 and random_number %4 != 0:
@@ -115,7 +116,19 @@ def get_max_value(chosen_level):
     elif chosen_level == 'hard':
         return 100
     else:
-        return 1  # Default to 1 if the difficulty level is invalid
+        return 1
+
+
+def approximity():
+    """
+    Lets user know how close they are getting to the answer
+    """
+    if int(guess) > random_number:
+        difference = int(guess) - random_number
+    elif int(guess) < random_number:
+        difference = random_number - int(guess)
+
+    print(f'difference is {difference}') 
 
 chosen_name, chosen_level = game_level()
 random_number_and_attempts = generate_random_value(chosen_name, chosen_level)
