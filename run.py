@@ -54,15 +54,28 @@ def generate_random_value(name, chosen_level):
 
     return random_number, attempts
 
-def approximity(guess, random_number):
+def approximity(guess, random_number, guessed_numbers, difference_list):
     """
     Returns the difference between the guess and the random number.
     """
+    
     difference = abs(int(guess) - random_number)
-    print(f'difference is {difference}')
-    return difference
+    difference_list.append(difference)
 
-def check_answer(name, random_number_and_attempts, chosen_level):
+    print(difference)
+    print(difference_list)
+    print(difference_list[-1])
+
+    if len(difference_list) >= 2:
+        last_difference = difference_list[-1]
+        penultimate_difference = difference_list[-2]
+
+        if last_difference < penultimate_difference:
+            print('warmer!')
+        elif last_difference > penultimate_difference:
+            print('colder!')
+
+def check_answer(name, random_number_and_attempts, chosen_level, difference_list):
     """
     Checks if user's guess is correct, prevents repeating the same guess, and ensures 
     the guess is within the valid range.
@@ -79,7 +92,7 @@ def check_answer(name, random_number_and_attempts, chosen_level):
             print('Invalid input. Please enter a number.')
             continue
 
-        difference = approximity(guess, random_number)
+        difference = approximity(guess, random_number, guessed_numbers, difference_list)
 
         if guess in guessed_numbers:
             print('You already guessed that number. Try a different one.')
@@ -111,7 +124,7 @@ def check_answer(name, random_number_and_attempts, chosen_level):
         else:
             print(f'Invalid guess. Please enter a number between 1 and {get_max_value(chosen_level)}.')
 
-    return guess
+    return guess, guessed_numbers
 
 def get_max_value(chosen_level):
     """
@@ -128,6 +141,7 @@ def get_max_value(chosen_level):
 
 guess = 0
 
+difference_list = []
 chosen_name, chosen_level = game_level()
 random_number_and_attempts = generate_random_value(chosen_name, chosen_level)
-check_answer(chosen_name, random_number_and_attempts, chosen_level)
+check_answer(chosen_name, random_number_and_attempts, chosen_level,difference_list)
