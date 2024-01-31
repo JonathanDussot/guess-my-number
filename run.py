@@ -20,16 +20,16 @@ def game_level():
         except ValueError as e:
             print(e)
         
-    print(f'Hello {name}, which level would you like to play?\n')
+    print(f'\nHello {name}, The rules are simple: Guess which number I\'m thinking of.')
 
     while True:
-        level = input("Type either 'easy', 'medium', or 'hard': ")
+        level = input("which level would you like to play?  Type either 'easy', 'medium', or 'hard': \n")
         
         if level in ['easy', 'medium', 'hard']:
-            print(f'Hello {name}, you have chosen {level}')
+            print(f'\nGreat {name}, you have chosen {level}\n')
             break
         else:
-            print(f'Sorry {name}, you have entered an invalid option. Please choose a valid game difficulty')
+            print(f'Sorry {name}, you have entered an invalid option. Please choose a valid game difficulty\n')
 
     return name, level
 
@@ -40,15 +40,15 @@ def generate_random_value(name, chosen_level):
     if chosen_level == 'easy':
         random_number = random.randint(1, 20)
         attempts = 6
-        print(f"I\'m thinking of a number, {name}! You have 6 attempts to guess which number it is.\n")
+        print(f"I\'m thinking of a number, {name}! You have 6 attempts to guess which number it is.")
     elif chosen_level == 'medium':
         random_number = random.randint(1, 50)
         attempts = 10
-        print(f"I\'m thinking of a number, {name}! You have 10 attempts to guess which number it is.\n")
+        print(f"I\'m thinking of a number, {name}! You have 10 attempts to guess which number it is.")
     elif chosen_level == 'hard':
         random_number = random.randint(1, 100)
         attempts = 15
-        print(f"I\'m thinking of a number, {name}! You have 15 attempts to guess which number it is.\n")
+        print(f"I\'m thinking of a number, {name}! You have 15 attempts to guess which number it is.")
     else:
         print('Invalid game level')
 
@@ -62,18 +62,20 @@ def approximity(guess, random_number, guessed_numbers, difference_list):
     difference = abs(int(guess) - random_number)
     difference_list.append(difference)
 
-    print(difference)
-    print(difference_list)
-    print(difference_list[-1])
+    if 1 <= difference < 10:
+            print('You\'re so close now!')
 
     if len(difference_list) >= 2:
         last_difference = difference_list[-1]
         penultimate_difference = difference_list[-2]
 
-        if last_difference < penultimate_difference:
-            print('warmer!')
+        if difference == 0:
+            print('Spot on!')
+        elif last_difference < penultimate_difference:
+            print('You\'re getting warmer!')
         elif last_difference > penultimate_difference:
-            print('colder!')
+            print('Colder!')
+        
 
 def check_answer(name, random_number_and_attempts, chosen_level, difference_list):
     """
@@ -116,7 +118,7 @@ def check_answer(name, random_number_and_attempts, chosen_level, difference_list
                     elif random_number % 3 != 0 and random_number % 4 != 0:
                         print('This number is not divisible by neither 3 nor 4\n')
                 elif attempts == 0:
-                    print(f'Sorry {name}, you have run out of attempts. Game over')
+                    print(f'Sorry {name}, you have run out of attempts. Game over.  The correct answer was actually {random_number}')
                     break
             else:
                 print(f'Hooray, {name}! You guessed the correct number!')
