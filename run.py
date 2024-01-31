@@ -142,8 +142,19 @@ def get_max_value(chosen_level):
         return 1
 
 guess = 0
-
 difference_list = []
-chosen_name, chosen_level = game_level()
-random_number_and_attempts = generate_random_value(chosen_name, chosen_level)
-check_answer(chosen_name, random_number_and_attempts, chosen_level,difference_list)
+
+def main():
+    """
+    Run all program functions
+    """
+    while True:
+        chosen_name, chosen_level = game_level()
+        random_number_and_attempts = generate_random_value(chosen_name, chosen_level)
+        check_answer(chosen_name, random_number_and_attempts, chosen_level,difference_list)
+
+        play_again = input('Do you want to play again? (yes/no): ')
+        if play_again.lower() != 'yes':
+            print('Thanks for playing. Goodbye!')
+            break
+main()
