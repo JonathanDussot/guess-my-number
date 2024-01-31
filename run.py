@@ -3,7 +3,6 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import random
 
-
 def game_level():
     """
     Game start function to request user's name and difficulty they wish to play.
@@ -34,28 +33,34 @@ def game_level():
 
     return name, level
 
-
 def generate_random_value(name, chosen_level):
     """
     Generates value based on game level chosen.
     """
     if chosen_level == 'easy':
-        random_number = random.randint(1,20)
+        random_number = random.randint(1, 20)
         attempts = 6
         print(f"I\'m thinking of a number, {name}! You have 6 attempts to guess which number it is.\n")
     elif chosen_level == 'medium':
-        random_number = random.randint(1,50)
+        random_number = random.randint(1, 50)
         attempts = 10
         print(f"I\'m thinking of a number, {name}! You have 10 attempts to guess which number it is.\n")
     elif chosen_level == 'hard':
-        random_number = random.randint(1,100)
+        random_number = random.randint(1, 100)
         attempts = 15
         print(f"I\'m thinking of a number, {name}! You have 15 attempts to guess which number it is.\n")
     else:
         print('Invalid game level')
 
     return random_number, attempts
-       
+
+def approximity(guess, random_number):
+    """
+    Returns the difference between the guess and the random number.
+    """
+    difference = abs(int(guess) - random_number)
+    print(f'difference is {difference}')
+    return difference
 
 def check_answer(name, random_number_and_attempts, chosen_level):
     """
@@ -74,6 +79,8 @@ def check_answer(name, random_number_and_attempts, chosen_level):
             print('Invalid input. Please enter a number.')
             continue
 
+        difference = approximity(guess, random_number)
+
         if guess in guessed_numbers:
             print('You already guessed that number. Try a different one.')
             continue
@@ -82,19 +89,19 @@ def check_answer(name, random_number_and_attempts, chosen_level):
             guessed_numbers.append(guess)
 
             if guess != random_number:
-                approximity()
                 print('Try again\n')
                 attempts -= 1
+
                 if attempts == 3:
                     print('You have 3 attempts left, so here are some clues to help!')
-                    if random_number %3 == 0 and random_number %4 == 0:
+                    if random_number % 3 == 0 and random_number % 4 == 0:
                         print('This number is divisible by 3 and 4\n')
-                    elif random_number %3 == 0 and random_number %4 != 0:
+                    elif random_number % 3 == 0 and random_number % 4 != 0:
                         print('This number is divisible by 3 but not divisible by 4\n')
-                    elif random_number %3 != 0 and random_number %4 == 0:
+                    elif random_number % 3 != 0 and random_number % 4 == 0:
                         print('This number is divisible by 4 but not divisible by 3\n')
-                    elif random_number %3 != 0 and random_number %4 != 0:
-                        print('This number is not divisible by neither 3 or 4\n')
+                    elif random_number % 3 != 0 and random_number % 4 != 0:
+                        print('This number is not divisible by neither 3 nor 4\n')
                 elif attempts == 0:
                     print(f'Sorry {name}, you have run out of attempts. Game over')
                     break
@@ -104,6 +111,7 @@ def check_answer(name, random_number_and_attempts, chosen_level):
         else:
             print(f'Invalid guess. Please enter a number between 1 and {get_max_value(chosen_level)}.')
 
+    return guess
 
 def get_max_value(chosen_level):
     """
@@ -118,23 +126,8 @@ def get_max_value(chosen_level):
     else:
         return 1
 
-
-def approximity():
-    """
-    Lets user know how close they are getting to the answer
-    """
-    if int(guess) > random_number:
-        difference = int(guess) - random_number
-    elif int(guess) < random_number:
-        difference = random_number - int(guess)
-
-    print(f'difference is {difference}') 
+guess = 0
 
 chosen_name, chosen_level = game_level()
 random_number_and_attempts = generate_random_value(chosen_name, chosen_level)
 check_answer(chosen_name, random_number_and_attempts, chosen_level)
-
-guess = 0
-
-
-
