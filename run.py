@@ -16,6 +16,8 @@ def game_level():
             name = input('Enter your name here: ')
             if not name.strip():
                 raise ValueError('Not a valid name')
+            elif not name.isalpha():
+                raise ValueError('Invalid name. Please enter alphabetic characters only.')
             break
         except ValueError as e:
             print(e)
@@ -25,7 +27,7 @@ def game_level():
     while True:
         level = input("which level would you like to play?  Type either 'easy', 'medium', or 'hard': \n")
         
-        if level in ['easy', 'medium', 'hard']:
+        if level.lower() in ['easy', 'medium', 'hard']:
             print(f'\nGreat {name}, you have chosen {level}\n')
             break
         else:
