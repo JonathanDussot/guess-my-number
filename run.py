@@ -39,6 +39,9 @@ def generate_random_value(name, chosen_level):
     """
     Generates value based on game level chosen.
     """
+    random_number = 0
+    attempts = 0
+
     if chosen_level == 'easy':
         random_number = random.randint(1, 20)
         attempts = 5
@@ -127,18 +130,18 @@ def check_answer(name, random_number_and_attempts, chosen_level, difference_list
                 break
         else:
             print(f'Invalid guess. Please enter a number between 1 and {get_max_value(chosen_level)}.')
-
-    return guess, guessed_numbers
+            
+    return random_number, attempts
 
 def get_max_value(chosen_level):
     """
     Returns the maximum valid value for the chosen difficulty level.
     """
-    if chosen_level == 'easy':
+    if chosen_level.lower() == 'easy':
         return 20
-    elif chosen_level == 'medium':
+    elif chosen_level.lower() == 'medium':
         return 50
-    elif chosen_level == 'hard':
+    elif chosen_level.lower() == 'hard':
         return 100
     else:
         return 1
