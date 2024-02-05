@@ -3,6 +3,7 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import random
 
+
 def game_level():
     """
     Game start function to request user's name and difficulty they wish to play.
@@ -35,6 +36,7 @@ def game_level():
 
     return name, level
 
+
 def generate_random_value(name, chosen_level):
     """
     Generates value based on game level chosen.
@@ -42,15 +44,15 @@ def generate_random_value(name, chosen_level):
     random_number = 0
     attempts = 0
 
-    if chosen_level == 'easy':
+    if chosen_level.lower() == 'easy':
         random_number = random.randint(1, 20)
         attempts = 5
         print(f"I\'m thinking of a number, {name}! You have 5 attempts to guess which number it is.")
-    elif chosen_level == 'medium':
+    elif chosen_level.lower() == 'medium':
         random_number = random.randint(1, 50)
         attempts = 8
         print(f"I\'m thinking of a number, {name}! You have 8 attempts to guess which number it is.")
-    elif chosen_level == 'hard':
+    elif chosen_level.lower() == 'hard':
         random_number = random.randint(1, 100)
         attempts = 13
         print(f"I\'m thinking of a number, {name}! You have 13 attempts to guess which number it is.")
@@ -58,6 +60,7 @@ def generate_random_value(name, chosen_level):
         print('Invalid game level')
 
     return random_number, attempts
+
 
 def approximity(guess, random_number, guessed_numbers, difference_list):
     """
@@ -133,6 +136,7 @@ def check_answer(name, random_number_and_attempts, chosen_level, difference_list
             
     return random_number, attempts
 
+
 def get_max_value(chosen_level):
     """
     Returns the maximum valid value for the chosen difficulty level.
@@ -149,17 +153,25 @@ def get_max_value(chosen_level):
 guess = 0
 difference_list = []
 
+
 def main():
     """
     Run all program functions
     """
     while True:
+        difference_list = []
         chosen_name, chosen_level = game_level()
         random_number_and_attempts = generate_random_value(chosen_name, chosen_level)
         check_answer(chosen_name, random_number_and_attempts, chosen_level,difference_list)
 
-        play_again = input('Do you want to play again? (yes/no): ')
-        if play_again.lower() != 'yes':
-            print('Thanks for playing. Goodbye!')
-            break
+        while True:
+            play_again = input('Do you want to play again? (yes/no): ')
+            if play_again.lower() == 'yes':
+                print("That\'s the spirit")
+                break
+            elif play_again.lower() == 'no':
+                print("Thanks for playing. Goodbye!")
+                return
+            else:
+                print("please only write \'yes\' or \'no\'")
 main()
