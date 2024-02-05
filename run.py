@@ -164,9 +164,10 @@ def main():
     """
     Run all program functions
     """
+    chosen_name = game_level()
+
     while True:
         difference_list = []
-        chosen_name = game_level()
         chosen_level = choose_level(chosen_name)
         random_number_and_attempts = generate_random_value(chosen_name, chosen_level)
         check_answer(chosen_name, random_number_and_attempts, chosen_level,difference_list)
