@@ -9,8 +9,6 @@ def game_level():
     Game start function to request user's name and difficulty they wish to play.
     name input has a while loop with strip() method to ensure anything other than whitespace 
     is valid.
-    level selection has a while loop to ensure a level is chosen otherwise error will be given and 
-    user would again be prompted to enter a level.
     """
     while True:
         try:
@@ -22,6 +20,14 @@ def game_level():
             break
         except ValueError as e:
             print(e)
+    
+    return name
+
+def choose_level(name):
+    """
+    level selection has a while loop to ensure a level is chosen otherwise error will be given and 
+    user would again be prompted to enter a level.
+    """
         
     print(f'\nHello {name}, The rules are simple: Guess which number I\'m thinking of.')
 
@@ -34,7 +40,7 @@ def game_level():
         else:
             print(f'Sorry {name}, you have entered an invalid option. Please choose a valid game difficulty\n')
 
-    return name, level
+    return level
 
 
 def generate_random_value(name, chosen_level):
@@ -160,7 +166,8 @@ def main():
     """
     while True:
         difference_list = []
-        chosen_name, chosen_level = game_level()
+        chosen_name = game_level()
+        chosen_level = choose_level(chosen_name)
         random_number_and_attempts = generate_random_value(chosen_name, chosen_level)
         check_answer(chosen_name, random_number_and_attempts, chosen_level,difference_list)
 
