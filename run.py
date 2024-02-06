@@ -4,11 +4,11 @@
 import random
 
 
-def game_level():
+def user_name():
     """
-    Game start function to request user's name and difficulty they wish to play.
-    name input has a while loop with strip() method to ensure anything other than whitespace 
-    is valid.
+    Game start function to request user's name and difficulty they wish to
+    play.  Name input has a while loop with strip() method to ensure anything
+    other than whitespace is valid.
     """
     while True:
         try:
@@ -16,7 +16,8 @@ def game_level():
             if not name.strip():
                 raise ValueError('Not a valid name')
             elif not name.isalpha():
-                raise ValueError('Invalid name. Please enter alphabetic characters only.')
+                raise ValueError('Invalid name. Please enter alphabetic'
+                ' characters only.')
             break
         except ValueError as e:
             print(e)
@@ -164,7 +165,7 @@ def main():
     """
     Run all program functions
     """
-    chosen_name = game_level()
+    chosen_name = user_name()
 
     while True:
         difference_list = []
