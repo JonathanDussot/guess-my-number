@@ -88,7 +88,7 @@ def approximity(guess, random_number, guessed_numbers, difference_list):
     difference = abs(int(guess) - random_number)
     difference_list.append(difference)
 
-    if 1 <= difference < 10:
+    if 1 <= difference < 9:
         print(Fore.YELLOW + Style.BRIGHT + 'You\'re so close now!')
 
     if len(difference_list) >= 2:
@@ -96,7 +96,7 @@ def approximity(guess, random_number, guessed_numbers, difference_list):
         penultimate_difference = difference_list[-2]
 
         if difference == 0:
-            print(Fore.RED + Style.BRIGHT + 'Spot on!')
+            print(Fore.GREEN + Style.BRIGHT + 'Spot on!')
         elif last_difference < penultimate_difference:
             print('You\'re getting', Fore.RED + Style.BRIGHT + 'warmer!')
         elif last_difference > penultimate_difference:

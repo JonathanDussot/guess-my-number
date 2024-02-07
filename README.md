@@ -132,6 +132,24 @@ I used [Code Institute's pep8 Validator](https://pep8ci.herokuapp.com/) to verif
 
 ### Manual Testing
 
+### Functionality tests
+
+#### Button Testing
+
+- Tho code passed through [pep8ci](https://pep8ci.herokuapp.com/) and returned without any errors or warnings.
+
+| Items being tested | Actions taken to test | Expected result | Outcome |
+|---|---|---|---|
+|User name - invalid messages.| Entered numbers and non-alphanumeric characters.| Invalid messages returned. | :white_check_mark: |
+|Choose level - invalid messages| Entered wrong options.| Invalid messages returned.| :white_check_mark: |
+|Choose level - lower()method.| Entered correct options in capital letters. | The code recognizes option and selects level.| :white_check_mark: |
+|Generate random value.| Print number to verify it was generated within range. | Should only generate number indicated as per level.| :white_check_mark: |
+|Approximity - proximity message.| Compare guess and random number to confirm proximity and message occurrence. | Message displayed correctly when within 9 numbers of range.| :white_check_mark: |
+|Approximity - warmer/colder message.| Verify proximity with difference list-appended values | Messages displayed correctly when at least 2 numbers appended and compared.| :white_check_mark: |
+|Check answer - invalid messages.| Entered non-numeric characters, number out of given range, and duplicated numbers | Messages correctly display indicating specific error and how to proceed.| :white_check_mark: |
+|Check answer - Clues.| Using up attempts until 3 left, check number is divisible. | Clues should only appear if there are 3 attempts left, divisibility correctly calculated.| :white_check_mark: |
+|Play again feature.| Entered yes/no to verify outcome + other words. | Invalid message displayed unless 'yes'/'no' selected, flow proceeds correctly after option selected.| :white_check_mark: |
+
 ### Bugs Solved
 
 ### Remaining Bugs
