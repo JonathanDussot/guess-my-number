@@ -152,7 +152,15 @@ I used [Code Institute's pep8 Validator](https://pep8ci.herokuapp.com/) to verif
 
 ### Bugs Solved
 
+- Upon attempting to create my *difference list* to calculate if user was getting closer or further, i received a **IndexError: List index out of range**. To fix this, I nested my code to calculate the last two guesses within another if statement that only activated once the list had a length of at least two items.
+
+- I added the .lower() method to my choose_level function and it was identifying the level of difficulty chosen as per the confirmation print message, but the game wasn't starting and gave an invalid message instead.  I noticed the invalid message was from my generate_random_value function and that it didn't recognize the capital characters, so I also apply the .lower() there and fixed the bug.
+
+- Importing colorama worked on my local terminal but not the deployed terminal in Heroku.  Websites didn't have information as to why this was happening, so I checked and found the solution on slack to 'pip3 freeze > requirements.txt'.
+
 ### Remaining Bugs
+
+- None that I'm aware of.
 
 ## Credits
 
@@ -163,30 +171,6 @@ I used [Code Institute's pep8 Validator](https://pep8ci.herokuapp.com/) to verif
 - Some concepts and parts of code were taken from a [tutorial by 'Web Dev Simplified'](https://www.youtube.com/watch?v=riDzcEQbX6k) as detailed in my [script.js](script.js).
 
 - [Stackoverflow](https://stackoverflow.com/questions/9419263/how-to-play-audio) and their ideas of how to implement audios and counters
-
-### Media
-
-- The [3d-space-image.jpg](assets/images/3d-space-image.jpg), was taken from [freepik.com](www.freepik.com) from an author named [@kjpargeter](https://www.freepik.com/author/kjpargeter) to give that outerspace, sci-fi feeling theme to my quiz.
-
-[3d-space-image.jpg from freepik](https://www.freepik.com/free-photo/3d-hyperspace-background-with-warp-tunnel-effect_8879794.htm#query=star%20wars&position=0&from_view=search&track=ais&uuid=2743de4c-8bee-445b-a1a5-01771d3ccbf6)
-
-- The [star-wars-logo.jpg](assets/images/star-wars-logo.jpg) was taken from the [infonegociosmiami](https://infonegocios.miami/) website, which gave me the perfect looking logo for the quiz offering a great colour contrast due to its font-colour and width of the lettering.
-
-[star-wars-logo.jpg from infonegociosmiami](https://infonegocios.miami/impact-mkt/conocida-en-todas-las-estrellas-explorando-el-legado-del-logo-de-star-wars-una-odisea-de-diseno-y-marca-parte-i)
-
-- The [yoda.png](assets/images/yoda.png), [darth-maul-img.png](assets/images/darth-maul-img.png), [darth-sidious-img.png](assets/images/darth-sidious-img.png) and [darth-vader-img.png](assets/images/darth-vader-img.png) were all transparent png images used within my game to give it a nostalgic and dynamic feeling to all users going through the experience provided by the quiz. The images of Yoda and Darth-Vader were taken from [pngimg.com](https://pngimg.com). Darth Maul's image was taken from [iconarchive](https://www.iconarchive.com/) and Darth Sidious's was taken from [pngkey.com](https://www.pngkey.com/).
-
-[yoda.png](https://pngimg.com/image/109430)
-
-[darth-maul-img.png](https://www.iconarchive.com/show/star-wars-characters-icons-by-jonathan-rey/Darth-Maul-02-icon.html) created by Jonathan Rey.
-
-[darth-sidious-img.png](https://www.pngkey.com/maxpic/u2e6w7i1a9a9a9a9/) created by The HD Colin Powell Anthrax.
-
-[darth-vader-img.png](https://pngimg.com/image/28358)
-
-- The sound media files [gamestart-sound.mp3](sounds/gamestart-sound.mp3), [correct-sound.mp3](sounds/correct-sound.mp3) and [incorrect-sound.mp3](sounds/incorrect-sound.mp3) were all taken from [soundfxcenter](https://soundfxcenter.com/).
-
-[All sound files](https://soundfxcenter.com/sound-effects/star-wars/210)
 
 ## Acknowledgements
 
