@@ -124,7 +124,17 @@ The site is deployed using Code Institute's mock terminal for Heroku. To deploy:
 
 ## Testing
 
+### Validator
 
+I used [Code Institute's pep8 Validator](https://pep8ci.herokuapp.com/) to verify there were no errors by the end after having addressed all the warnings.
+
+![screenshot of validator's results](assets/images/cipython-linter.png)
+
+### Manual Testing
+
+### Bugs Solved
+
+### Remaining Bugs
 
 ## Credits
 
