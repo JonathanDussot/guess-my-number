@@ -1,6 +1,8 @@
 # Guess My Number
 
-## Introduction
+*Guess My Number* is a python terminal gaame 
+
+## How To Play
 
 *Guess My Number* is a fun one-player game vs the computer where the computer randomly selects a number and the user attempts to guess it correctly.  The random number is given parameters from which to choose the random number from depending on the difficulty selected by the user. The amount of attempts can also vary and also depends on the difficulty chosen.  between attempts, the user is given feedback to notify if they're getting closer to or further from the target number.  in addition to this, there are also a set of clues given once user only finds they have 3 attempts left (as seen in the features below). It is run on a loop for user to choose to play again if they wish, otherwise selecting 'no' would break the loop and end the game.
 

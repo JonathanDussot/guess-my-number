@@ -35,7 +35,7 @@ def choose_level(name):
     """
 
     print(f'\nHello {name}, The rules are simple:\n Guess which number I\'m'
-          ' thinking of. If you are down to your last 3 attempts, you will '
+          ' thinking of.\n If you are down to your last 3 attempts, you will '
           'receive some clues to help you.')
 
     while True:
