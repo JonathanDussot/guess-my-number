@@ -62,17 +62,17 @@ def generate_random_value(name, chosen_level):
     if chosen_level.lower() == 'easy':
         random_number = random.randint(1, 20)
         attempts = 5
-        print(f"I\'m thinking of a number, {name}! You have 5 attempts to "
+        print(f"I\'m thinking of a number, {name}! You have 5 attempts to\n "
               "guess which number it is.")
     elif chosen_level.lower() == 'medium':
         random_number = random.randint(1, 50)
         attempts = 8
-        print(f"I\'m thinking of a number, {name}! You have 8 attempts to "
+        print(f"I\'m thinking of a number, {name}! You have 8 attempts to\n "
               "guess which number it is.")
     elif chosen_level.lower() == 'hard':
         random_number = random.randint(1, 100)
         attempts = 13
-        print(f"I\'m thinking of a number, {name}! You have 13 attempts to "
+        print(f"I\'m thinking of a number, {name}! You have 13 attempts to\n "
               "guess which number it is.")
     else:
         print(Fore.RED + 'Invalid game level')
