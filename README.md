@@ -17,28 +17,14 @@ You can visit the GitHub Repository [here](https://github.com/JonathanDussot/gue
 ## CONTENTS
 
 - [Star Wars Quiz](#star-wars-quiz)
-  - [Project Overview](#project-overview)
-    - [Live Website](#live-website)
+  - [How To Play](#how-to-play)
     - [My GitHub Repository](#my-github-repository)
   - [CONTENTS](#contents)
-  - [User Experience (UX)](#user-experience-ux)
-    - [Common Usage](#common-usage)
-  - [User Stories](#user-stories)
-  - [Design](#design)
-    - [colour scheme](#colour-scheme)
-    - [Typography](#typography)
-    - [Imagery](#imagery)
-    - [Wireframes](#wireframes)
-      - [Home Page](#home-page)
-      - [Quiz Questions](#quiz-questions)
-      - [Results Page](#results-page)
-    - [Intelligent Diagramming chart](#intelligent-diagramming-chart)
+  - [Intelligent Diagramming chart](#intelligent-diagramming-chart)
   - [Features](#features)
-    - [General Features on each page](#general-features-on-each-page)
+    - [Existing Features](#existing-features)
     - [Future Implementations](#future-implementations)
-    - [Accessibility](#accessibility)
-  - [Technologies Used](#technologies-used)
-    - [Languages Used](#languages-used)
+    [Technologies Used](#technologies-used)
     - [Libraries and Programs Used](#libraries-and-programs-used)
   - [Deployment And Local Development](#deployment-and-local-development)
     - [Deployment to GitHub pages](#deployment-to-github-pages)
@@ -51,7 +37,7 @@ You can visit the GitHub Repository [here](https://github.com/JonathanDussot/gue
     - [Media](#media)
   - [Acknowledgements](#acknowledgements)
 
-### Intelligent Diagramming chart
+## Intelligent Diagramming chart
 
 I created this Intelligent Diagram using Lucid Chart
 
@@ -86,56 +72,24 @@ I created this Intelligent Diagram using Lucid Chart
 
 ![screenshot of end message and restart quiz option](assets/images/features-5.png)
 
-
-
 ### Future Implementations
 
 ideas for future implementations I would like to include are:
 
-1. A feature to request usernames and provide users with a list of highest scores for the users to compete with.
-2. A multi-player feature for participants to compete remotely head-to-head on different devices along with the possibility for them to challenge participants to these head-to-head games.
-3. Another multi-player feature mode that will allow players to compete locally in teams to provide users with a fun party game.
-
-### Accessibility
-
-In order to ensure that this website is as accessible friendly as possible, the following measures have been taken:
-
-- Using semantic HTML elements.
-- Providing descriptive alt attributes for all images for users with visual impairments.
-- Providing information for screen readers for some features on the page.
-- Ensuring there is a sufficient colour contrast throughout the site.
-- I used Lighthouse and wAVE to ensure good measures were taken for accessibility.
-- instructions guide the user through the game's dynamics.
+1. A Multi-player option where users take turns to see who finds the number first.
+2. A variety of other clues given especially at higher difficulties so users can put their math skills to the test.
   
 ## Technologies Used
 
-### Languages Used
-
-The languages used for the website include HTML, CSS and JavaScript.
-
 ### Libraries and Programs Used
-
-[icons8.com](https://icons8.com/icons) to create favicon.
-
-[Tiny PNG](https://tinypng.com/) to compress images.
 
 [GitHub](https://github.com/) to save and store my website.
 
-[Codeanywhere](https://app.codeanywhere.com/) IDE I used for this project.
-
-[Google Fonts](https://fonts.google.com/) to import fonts used on the site.
-
-Google Dev tools - to test and fix issues detected.
-
-[freepik](www.freepik.com) to download and use my background-url image.
-
-[Am I Responsive?](https://ui.dev/amiresponsive) to show site on all different screen sizes.
-
-[Colormind.io](http://colormind.io/)  to generate color palette used.
-
-[Balsamiq](https://balsamiq.com/) to create wireframes.
+[Gitpod](https://www.gitpod.io/) IDE I used for this project.
 
 [Lucidchart](https://www.lucidchart.com/pages/) to create intelligent diagramming chart.
+
+Colorama - library I used to apply different colours and styles to my text.
 
 ## Deployment And Local Development
 
