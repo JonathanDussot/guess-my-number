@@ -34,7 +34,7 @@ def choose_level(name):
     error will be given and user would again be prompted to enter a level.
     """
 
-    print(f'\nHello {name}, The rules are simple: Guess which number I\'m'
+    print(f'\nHello {name}, The rules are simple:\n Guess which number I\'m'
           ' thinking of. If you are down to your last 3 attempts, you will '
           'receive some clues to help you.')
 
