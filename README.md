@@ -91,21 +91,22 @@ ideas for future implementations I would like to include are:
 
 Colorama - library I used to apply different colours and styles to my text.
 
+[Heroku](https://dashboard.heroku.com/) to deploy my project on the terminal.
+
 ## Deployment And Local Development
 
-### Deployment to GitHub pages
+### Deployment to Heroku
 
-The site is deployed using GitHub Pages. To deploy using GitHub pages:
+The site is deployed using Code Institute's mock terminal for Heroku. To deploy:
 
-1. Open the project repository.
-2. Click on "Settings" on the navigation bar under the repository title.
-3. Click on "Pages" in the left-hand navigation panel.
-4. Under "Source", choose which branch to deploy. This should be Main for newer repositories.
-5. Choose which folder to deploy from, usually "/root".
-6. Click "Save", then wait for it to be deployed. It can take some time for the page to be fully deployed.
-7. Your URL will be displayed above "Source".
-
-You can visit the website [here](https://github.com/JonathanDussot/star-wars-quiz)
+1. Create or log into your account on heroku.com.
+2. Create a new app, which will take you to add a name, choose your region and click on 'create'.
+3. Go to the 'Settings' tab.
+4. Scroll down to the 'Config Vars' option and add the key 'PORT' and value '8000'.
+5. Select and add buildpacks.  This project required python first and and then nodejs.
+6. Go to the 'Deploy' tab and select 'GitHub' as 'Deployment method'.
+7. Enter and search for your repository using the name given to connect.
+8. You are then given options to either automatically or manually deploy, depending on your preference.
 
 ### Local Deployment
 
@@ -123,7 +124,7 @@ You can visit the website [here](https://github.com/JonathanDussot/star-wars-qui
 
 ## Testing
 
-click [here](TESTING.md) to see the all the details in regard to the testing done on the site.
+
 
 ## Credits
 
