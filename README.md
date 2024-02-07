@@ -1,20 +1,18 @@
 # Guess My Number
 
-*Guess My Number* is a python terminal gaame 
+*Guess My Number* is a python terminal game which runs on a mock terminal in Heroku
+
+[here is the deployed version of it](https://guess-my-number-jpd-5867ef6aed06.herokuapp.com/)
+
+![screenshot of terminal when running program](assets/images/screenshot-game.png)
 
 ## How To Play
 
-*Guess My Number* is a fun one-player game vs the computer where the computer randomly selects a number and the user attempts to guess it correctly.  The random number is given parameters from which to choose the random number from depending on the difficulty selected by the user. The amount of attempts can also vary and also depends on the difficulty chosen.  between attempts, the user is given feedback to notify if they're getting closer to or further from the target number.  in addition to this, there are also a set of clues given once user only finds they have 3 attempts left (as seen in the features below). It is run on a loop for user to choose to play again if they wish, otherwise selecting 'no' would break the loop and end the game.
-
-![screenshot of site on amiresponsive](documentation/amiresponsive-star-wars-quiz.png)
-
-### Live Website
-
-You can visit the website [here](https://jonathandussot.github.io/star-wars-quiz/)
+*Guess My Number* is a fun one-player game vs the computer where the computer randomly selects a number and the user attempts to guess it correctly.  The random number is given parameters from which to choose the random number from depending on the difficulty selected by the user. The amount of attempts can also vary and also depends on the difficulty chosen.  between attempts, the user is given feedback to notify if they're getting closer to or further from the target number.  in addition to this, there are also a set of clues given once user only finds they have 3 attempts left (as seen in the [features section below](#features)). It is run on a loop for user to choose to play again if they wish, otherwise selecting 'no' would break the loop and end the game.
 
 ### My GitHub Repository
 
-You can visit the GitHub Repository [here](https://github.com/JonathanDussot/star-wars-quiz)
+You can visit the GitHub Repository [here](https://github.com/JonathanDussot/guess-my-number)
 
 ## CONTENTS
 
@@ -53,119 +51,42 @@ You can visit the GitHub Repository [here](https://github.com/JonathanDussot/sta
     - [Media](#media)
   - [Acknowledgements](#acknowledgements)
 
-## User Experience (UX)
-
-### Common Usage
-
-- The _Star Wars Quiz_ is an online quiz aimed to test the knowledge of Star Wars fans around the world.
-- Quiz contestants could enjoy this type of trivia quiz at a gathering to give their evening a fun and competitive element.
-- In the case of a younger audience or newcomers to the _Star Wars_ franchise, it may help to spark an interest and further feed their curiousity and facilitate their inclusion to an ever-growing community that has been so widely popular in every culture for almost half a century.
-
-## User Stories
-
-- I want to put my knowledge to the test in this particular topic.
-- I want to be able to choose a level of difficulty that is suitable to me.
-- I want to be able to easily navigate through the page and understand clearly its different functions and information presented to me.
-- I want it to be dynamic and fun so I can enjoy myself either alone or in the company of my friends whilst going through the quiz.
-
-## Design
-
-### colour scheme
-
-I designed the colour palette for the website myself. I only used [colormind.io](http://colormind.io/) to display the color palette of primary colours used.  Here is the list of colours used:
-
-![screenshot of primary colours on colormind.io](documentation/colormind-colours.png)
-
-- #111111, #333333, #dddddd, #eeeeee
-
-  - These colours were quite basic shades between black, grey and white.  The reason being for this is that it suited the theme of _Star Wars_ perfectly, as I gave each colour a certain degree of transparency depending on the element it was used on, so that the background image of outerspace, which also happens to be black and white, can be fully appreciated at all times.
-
-- #3333ff, #00c00, #cc0000
-
-  - These are secondary colours found throughout the page specifically in the button elements.  The first colour is used as an active effect for the the user has clicked on an option, where as the second and third colour indicate whether an answer is right or wrong, respectively.
-
-### Typography
-
-I used Google Fonts to import the following:
-
-- 'Libre Franklin' is a sans-serif style which I chose due to its close resemblance to the font used within _Star Wars_ to help give it a slightly familiar vibe to the quiz participants.
-
-### Imagery
-
-All the images added to the quiz are related to the franchise.  The background image has the purpose of setting the theme of the quiz, while more specific images within the body such as Yoda in the instructions and the villains within the game-difficulty buttons are set to give the user somewhat of a role as they start the quiz. The sources of each image used can be verified in the credit section below.
-
-### Wireframes
-
-I created these wireframes using Balsamiq.
-
-#### Home Page
-
-This is the home page with the instructions.  Some minor changes were made in terms of the buttons available to start running the quiz.
-
-![screenshot of home page on Balsamiq](documentation/star-wars-quiz-wireframe-1.png)
-
-#### Quiz Questions
-
-An example of the questions and answers shown. The image to the right shows the reaction upon the user's interaction to an answer.
-
-![screenshot of quiz questions on Balsamiq](documentation/star-wars-quiz-wireframe-2.png)
-
-#### Results Page
-
-A screenshot with the results of the quiz with the option to restart the quiz which takes the user back to the home page.
-
-![screenshot of results page on Balsamiq](documentation/star-wars-quiz-wireframe-3.png)
-
 ### Intelligent Diagramming chart
 
 I created this Intelligent Diagram using Lucid Chart
 
-![screenshot of results page on Lucidchart](documentation/diagram-img.png)
+![diagram of gameflow on Lucidchart](assets/images/diagram-img.png)
 
 ## Features
 
-### General Features on each page
+### Existing Features
 
-The page is responsive and contains:
+- Name requested from user
+- Instructions to the game given before then requesting game difficulty
 
-- Favicon of the Website
-  - chosen to match the theme of the site.
+![screenshot of inputs and instructions](assets/images/features-1.png)
 
-![screenshot of the favicon](documentation/favicon-star-wars.png)
+- Errors generated upon entering invalid characters/information.
 
-- Landing Page
-  - This would be the first page the user would see, introducing the theme with an image, bakkground image and the instructions explaining how to play the game, clearly stating there are three levels of difficulty.
+![screenshot of errors](assets/images/features-2.png)
 
-![screenshot of main page](documentation/sw-landing-page.png)
+- Keeps a record of previous guesses and calculates difference between the last two to indicate if user is getting closer or further.
+- Approximity function informs user when they are quite close to the target number.
 
-- Different levels of difficulty
-  - Here users are given an exciting presentation to the aforementioned three levels so they may visualise the difficulty based on the villain they can select, this is achieved with the help of transparent png-format images and names of well-known villains to face.
 
-![screenshot of difficulty levels on main page](documentation/sw-game-levels.png)
+![screenshot of approximity messages](assets/images/features-3.png)
 
-- Questions Display
-  - This image shows how users on differently-sized screens have the possibility of seeing questions and answers on the same screen.
+- Clues are given upon determining the user has only 3 attempts left.  These clues are generated from an *if* statement that calculated if the target number is divisible by 3 or 4.
 
-![screenshot of questions on different screens](documentation/sw-questions-page-diff-screens.png)
+![screenshot of clues](assets/images/features-4.png)
 
-- Questions Display with a selected answer
-  - Once the user selects an answer, different colours are displayed to show if they were correct.  The user is also given a 'next' button which allows the user to go onto the next question.
+- A message is displayed at the end to state that user got the number correct.
+- An alternative to this is the game over message should the user run out of attempts.
+- In both cases, the user is then given the option to restart the game and re-select the difficulty.
 
-![screenshot of question answered](documentation/sw-questions-page-answered.png)
+![screenshot of end message and restart quiz option](assets/images/features-5.png)
 
-- Results Page
-  - A screen will appear with the user's total score along with a feedback message which varies depending on the range of questions correctly answered. The message is worded in a particularly order to resemble Yoda's speech, who can be seen in the image.  This is to give the user the full experience of being immersed in the _Star Wars_ universe.
 
-![screenshot of results page](documentation/sw-results-page.png)
-
-- Sound Effects
-  - The gamestart sound effect is activated upon selecting any of the game-type difficulties. This helps give the user a sense of immersion into the game.
-  - The correct & incorrect sound effects are activated upon selecting an answer to add to the user's excitement while going through the quiz's questions, helping to add excitement to the user's experience.
-
-- Question counter
-  - A section with the number of the current question the user is on and the total number of questions in the quiz so that the user is completely aware of where they are within the quiz.
-
-![screenshot of Question counter](documentation/sw-counter-img.png)
 
 ### Future Implementations
 
