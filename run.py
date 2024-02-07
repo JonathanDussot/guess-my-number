@@ -2,20 +2,7 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import random
-from colorama import init, Fore, Style
-
-# Initialize colorama to enable ANSI color codes on Windows
-init(autoreset=True)
-
-# Define the text
-text = "You're getting"
-
-try:
-    # Try using color codes
-    print(f"{text} {Fore.RED}{Style.BRIGHT}warmer!")
-except:
-    # If an error occurs (e.g., ANSI not supported), print without color
-    print(f"{text} warmer!")
+from colorama import init, Fore
 
 
 def user_name():
