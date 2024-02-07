@@ -2,9 +2,20 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import random
-from colorama import init, Fore
+from colorama import init, Fore, Style
 
+# Initialize colorama to enable ANSI color codes on Windows
 init(autoreset=True)
+
+# Define the text
+text = "You're getting"
+
+try:
+    # Try using color codes
+    print(f"{text} {Fore.RED}{Style.BRIGHT}warmer!")
+except:
+    # If an error occurs (e.g., ANSI not supported), print without color
+    print(f"{text} warmer!")
 
 
 def user_name():
@@ -19,8 +30,8 @@ def user_name():
             if not name.strip():
                 raise ValueError(Fore.RED + 'Not a valid name')
             elif not name.isalpha():
-                raise ValueError(Fore.RED + 'Invalid name. Please enter alphabetic'
-                                 ' characters only.')
+                raise ValueError(Fore.RED + 'Invalid name. Please enter '
+                                 'alphabetic characters only.')
             break
         except ValueError as e:
             print(e)
@@ -45,8 +56,8 @@ def choose_level(name):
             print(f'\nGreat {name}, you have chosen {level}\n')
             break
         else:
-            print(Fore.RED + f'Sorry {name}, you have entered an invalid option. Please'
-                  ' choose a valid game difficulty\n')
+            print(Fore.RED + f'Sorry {name}, you have entered an invalid '
+                  'option. Please choose a valid game difficulty\n')
 
     return level
 
@@ -97,9 +108,9 @@ def approximity(guess, random_number, guessed_numbers, difference_list):
         if difference == 0:
             print(Fore.GREEN + 'Spot on!')
         elif last_difference < penultimate_difference:
-            print('You\'re getting',Fore.RED + 'warmer!')
+            print('You\'re getting', Fore.RED + 'warmer!')
         elif last_difference > penultimate_difference:
-            print('You\'re getting',Fore.BLUE + 'colder!')
+            print('You\'re getting', Fore.BLUE + 'colder!')
 
 
 def check_answer(name, random_number_and_attempts, chosen_level,
@@ -125,7 +136,8 @@ def check_answer(name, random_number_and_attempts, chosen_level,
                                  difference_list)
 
         if guess in guessed_numbers:
-            print(Fore.RED + 'You already guessed that number. Try a different one.')
+            print(Fore.RED + 'You already guessed that number. Try a '
+                  'different one.')
             continue
 
         if 1 <= guess <= get_max_value(chosen_level):
@@ -136,30 +148,32 @@ def check_answer(name, random_number_and_attempts, chosen_level,
                 attempts -= 1
 
                 if attempts == 3:
-                    print(Fore.BLUE + 'You have 3 attempts left, so here are some clues '
-                          'to help!')
+                    print(Fore.BLUE + 'You have 3 attempts left, so here are '
+                          'some clues to help!')
                     if random_number % 3 == 0 and random_number % 4 == 0:
-                        print(Fore.BLUE + 'This number is divisible by 3 and 4\n')
+                        print(Fore.BLUE + 'This number is divisible by 3 and'
+                              ' 4\n')
                     elif random_number % 3 == 0 and random_number % 4 != 0:
-                        print(Fore.BLUE + 'This number is divisible by 3 but not divisible'
-                              ' by 4\n')
+                        print(Fore.BLUE + 'This number is divisible by 3 but '
+                              'not divisible by 4\n')
                     elif random_number % 3 != 0 and random_number % 4 == 0:
-                        print(Fore.BLUE + 'This number is divisible by 4 but not divisible'
-                              ' by 3\n')
+                        print(Fore.BLUE + 'This number is divisible by 4 but '
+                              'not divisible by 3\n')
                     elif random_number % 3 != 0 and random_number % 4 != 0:
-                        print(Fore.BLUE + 'This number is not divisible by neither 3 nor '
-                              '4\n')
+                        print(Fore.BLUE + 'This number is not divisible by '
+                              'neither 3 nor 4\n')
                 elif attempts == 0:
-                    print(Fore.RED + f'Sorry {name}, you have run out of attempts. Game '
-                          f'over.  The correct answer was actually '
-                          f'{random_number}')
+                    print(Fore.RED + f'Sorry {name}, you have run out of '
+                          f'attempts. Game over.  The correct answer was '
+                          f'actually {random_number}')
                     break
             else:
-                print(Fore.GREEN + f'Hooray, {name}! You guessed the correct number!')
+                print(Fore.GREEN + f'Hooray, {name}! You guessed the correct '
+                      'number!')
                 break
         else:
-            print(Fore.RED + f'Invalid guess. Please enter a number between 1 and '
-                  f'{get_max_value(chosen_level)}.')
+            print(Fore.RED + f'Invalid guess. Please enter a number between 1 '
+                  f'and {get_max_value(chosen_level)}.')
 
     return random_number, attempts
 
