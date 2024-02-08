@@ -16,7 +16,7 @@ You can visit the GitHub Repository [here](https://github.com/JonathanDussot/gue
 
 ## CONTENTS
 
-- [Star Wars Quiz](#star-wars-quiz)
+- [Guess My Number](#guess-my-number)
   - [How To Play](#how-to-play)
     - [My GitHub Repository](#my-github-repository)
   - [CONTENTS](#contents)
@@ -27,14 +27,18 @@ You can visit the GitHub Repository [here](https://github.com/JonathanDussot/gue
     [Technologies Used](#technologies-used)
     - [Libraries and Programs Used](#libraries-and-programs-used)
   - [Deployment And Local Development](#deployment-and-local-development)
-    - [Deployment to GitHub pages](#deployment-to-github-pages)
+    - [Deployment to Heroku](#deployment-to-heroku)
     - [Local Deployment](#local-deployment)
       - [How to Fork](#how-to-fork)
       - [How to Clone](#how-to-clone)
   - [Testing](#testing)
+    - [Validator](#validator)
+    - [Manual Functionality Tests](#manual-functionality-tests)
+      - [Function Testing](#function-testing)
+    - [Bugs Solved](#bugs-solved)
+    - [Remaining bugs](#remaining-bugs)
   - [Credits](#credits)
     - [Content](#content)
-    - [Media](#media)
   - [Acknowledgements](#acknowledgements)
 
 ## Intelligent Diagramming chart
@@ -93,6 +97,8 @@ Colorama - library I used to apply different colours and styles to my text.
 
 [Heroku](https://dashboard.heroku.com/) to deploy my project on the terminal.
 
+[Stackoverflow](https://stackoverflow.com/) for information searched.
+
 ## Deployment And Local Development
 
 ### Deployment to Heroku
@@ -130,13 +136,9 @@ I used [Code Institute's pep8 Validator](https://pep8ci.herokuapp.com/) to verif
 
 ![screenshot of validator's results](assets/images/cipython-linter.png)
 
-### Manual Testing
+### Manual Functionality Tests
 
-### Functionality tests
-
-#### Button Testing
-
-- Tho code passed through [pep8ci](https://pep8ci.herokuapp.com/) and returned without any errors or warnings.
+#### Function Testing
 
 | Items being tested | Actions taken to test | Expected result | Outcome |
 |---|---|---|---|
