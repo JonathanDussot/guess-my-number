@@ -166,18 +166,18 @@ I used [Code Institute's pep8 Validator](https://pep8ci.herokuapp.com/) to verif
 
 ### Content
 
-- The information I got for my questions mostly came from [buzzfeed](https://www.buzzfeed.com/laurafrustaci/star-wars-trivia)
+- Firstly, I got the idea of a numbers game from a [video from Portfolio courses](https://www.youtube.com/watch?v=B2tviDGFq84) while searching for an idea for my project.  This provided me with a basic concept to start with.
 
-- Some concepts and parts of code were taken from a [tutorial by 'Web Dev Simplified'](https://www.youtube.com/watch?v=riDzcEQbX6k) as detailed in my [script.js](script.js).
+- I found code on how to add color and style to my text from [thepythoncode.com](https://thepythoncode.com/article/change-text-color-in-python?utm_content=cmp-true) and [pypi.org](https://pypi.org/project/colorama/).
 
-- [Stackoverflow](https://stackoverflow.com/questions/9419263/how-to-play-audio) and their ideas of how to implement audios and counters
+- [Stackoverflow](https://stackoverflow.com/questions/13602170/how-do-i-find-the-difference-between-two-values-without-knowing-which-is-larger) and [docs.python.org](https://docs.python.org/3/library/numbers.html) gave me an idea to use abs() when calculating the difference, which hugely helped to simplify my code considering I was initially planning an *if* statement such as the one in the *LoveMaths* repository to determine which number was bigger first. 
 
 ## Acknowledgements
 
 I would like to acknowledge the following people who have been a huge help for this project:
 
-- [Lauren-Nicole](https://github.com/CluelessBiker) - My Code Institute Mentor for her advice and expertise.
+- [Lauren-Nicole](https://github.com/CluelessBiker) - My Code Institute Mentor for her priceless support and advice not only in the project but gradually giving me more insight as to the mindset I should develop as a developer.
 
-- The Slack community of Code Institute for their help and support.
+- The Slack community of Code Institute for their help and support which gave me the idea and solution of using 'pip3 freeze' to solve my issue with importing colorama.
 
 - Tutor Support from Code Institute for their help and support.
