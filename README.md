@@ -6,7 +6,7 @@
 
 ![screenshot of terminal when running program](assets/images/screenshot-game.png)
 
-This game is aimed towards and can be of interest to an audience of all ages who enjoy number games.  It offers the user the fun of having to predict the number while putting their mathematical skills to the test with the clues given in terms of how close they are getting and the division calculations.
+This game challenges various skills within the user's arsenal, such as reasoning skills, mathematical skills, etc. while providing them with a positive and fun environment to relax in.  Moreover, it can be of interest to an audience of all ages who enjoy number games.  It offers the user the fun of having to predict the number while putting their mathematical skills to the test with the clues given in terms of how close they are getting and the division calculations.
 
 ## How To Play
 
