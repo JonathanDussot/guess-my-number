@@ -6,6 +6,8 @@
 
 ![screenshot of terminal when running program](assets/images/screenshot-game.png)
 
+This game is aimed towards and can be of interest to an audience of all ages who enjoy number games.  It offers the user the fun of having to predict the number while putting their mathematical skills to the test with the clues given in terms of how close they are getting and the division calculations.
+
 ## How To Play
 
 *Guess My Number* is a fun one-player game vs the computer where the computer randomly selects a number and the user attempts to guess it correctly.  The random number is given parameters from which to choose the random number from depending on the difficulty selected by the user. The amount of attempts can also vary and also depends on the difficulty chosen.  between attempts, the user is given feedback to notify if they're getting closer to or further from the target number.  in addition to this, there are also a set of clues given once user only finds they have 3 attempts left (as seen in the [features section below](#features)). It is run on a loop for user to choose to play again if they wish, otherwise selecting 'no' would break the loop and end the game.
@@ -154,7 +156,7 @@ I used [Code Institute's pep8 Validator](https://pep8ci.herokuapp.com/) to verif
 
 ### Bugs Solved
 
-- Upon attempting to create my *difference list* to calculate if user was getting closer or further, i received a **IndexError: List index out of range**. To fix this, I nested my code to calculate the last two guesses within another if statement that only activated once the list had a length of at least two items.
+- Upon attempting to create my *difference list* to calculate if user was getting closer or further, I received a **IndexError: List index out of range**. To fix this, I nested my code to calculate the last two guesses within another if statement that only activated once the list had a length of at least two items.
 
 - I added the .lower() method to my choose_level function and it was identifying the level of difficulty chosen as per the confirmation print message, but the game wasn't starting and gave an invalid message instead.  I noticed the invalid message was from my generate_random_value function and that it didn't recognize the capital characters, so I also apply the .lower() there and fixed the bug.
 
